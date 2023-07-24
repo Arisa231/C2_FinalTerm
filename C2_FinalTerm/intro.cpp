@@ -26,11 +26,3 @@ int introduction() {
 	else if (d == 2)
 		return 2;
 }
-
-void description() {
-
-}
-
-void ranking() {
-
-}

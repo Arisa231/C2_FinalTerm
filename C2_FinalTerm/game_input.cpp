@@ -6,21 +6,30 @@ void getName(char name[10]) {
 	fprintf_s(stdout, u8"-------------------------------------------------------\n");
 	fprintf_s(stdout, u8"プレイヤーの名前を10文字以内で入力してください。\n");
 	for (;;) {
+		// 名前の入力
+		fprintf_s(stdout, u8"入力：");
 		if (scanf_s("%9s", name, 10) == 1) {
 			scanf_s("%*[^\n]");
+
+			// 入力した名前の確認
 			fprintf_s(stdout, u8"プレイヤー名は、「%s」でよろしいですか？\n", name);
 			fprintf_s(stdout, u8"よろしければ1を、変更するなら2を入力してください。\n");
 			while (1) {
+				fprintf_s(stdout, u8"入力：");
 				if (scanf_s("%lf", &d) == 1 and (d == 1 or d == 2))
 					break;
 				fprintf_s(stdout, u8"1か2を入力してください。\n");
 				scanf_s("%*[^\n]");
 			}
+
+			// 名前の変更なしの場合
 			if (d == 1) {
 				fprintf_s(stdout, u8"プレイヤー名は、「%s」で登録しました。\n", name);
 				fprintf_s(stdout, u8"-------------------------------------------------------\n\n");
 				break;
 			}
+
+			// 名前の変更をする場合
 			if (d == 2) {
 				fprintf_s(stdout, u8"もう一度、プレイヤーの名前を10文字以内で入力してください。\n");
 			}
@@ -58,5 +67,6 @@ int getAnswer(int size, int answer) {
 	}
 	playersAnswer = playersAnswer * 10 + d2;
 
+	// プレイヤーの入力した解答を返す
 	return playersAnswer;
 }

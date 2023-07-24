@@ -1,10 +1,12 @@
 #pragma once
 #include <stdio.h>
 #include <stdlib.h>
-#include <iostream>
 #include <Windows.h>
 #include <time.h>
+#include <iostream>
+#include <fstream>
 #include <string>
+#include <chrono>
 
 #define BUFFSIZE 1024
 
@@ -21,9 +23,9 @@ int getAnswer(int size, int answer);
 // 名前の入力
 void getName(char name[10]);
 // ゲームをプレイ
-int playGame(time_t startTime, time_t endTime);
+int playGame(std::chrono::seconds playTime);
 // 結果の出力
-void result(char name[10], int correct, time_t playTime);
+void result(char name[10], int correct, std::chrono::seconds playTime);
 // ゲームの説明
 void description();
 // ゲームのプレイ結果ランキング表示
