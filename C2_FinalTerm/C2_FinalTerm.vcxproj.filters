@@ -18,19 +18,22 @@
     <ClCompile Include="C2_FinalTerm.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="question.cpp">
+    <ClCompile Include="game_question.cpp">
       <Filter>リソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="setting.cpp">
       <Filter>リソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="output.cpp">
+    <ClCompile Include="game_result.cpp">
       <Filter>リソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="game.cpp">
       <Filter>リソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="answer.cpp">
+    <ClCompile Include="intro.cpp">
+      <Filter>リソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="game_input.cpp">
       <Filter>リソース ファイル</Filter>
     </ClCompile>
   </ItemGroup>
