@@ -18,6 +18,7 @@ int main()
 
 		// ゲームプレイモード
 		if (mode == 0) {
+			fprintf_s(stdout, u8"ゲームプレイモードを選択しました。\n");
 			getName(name);								// player nameの取得
 			fprintf_s(stdout, u8"好きなキーを押すと、ゲームスタートです。\n");
 			system("pause");

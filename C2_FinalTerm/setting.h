@@ -4,6 +4,7 @@
 #include <iostream>
 #include <Windows.h>
 #include <time.h>
+#include <string>
 
 #define BUFFSIZE 1024
 

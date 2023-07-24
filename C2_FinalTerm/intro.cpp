@@ -10,6 +10,7 @@ int introduction() {
 	fprintf_s(stdout, u8"0：ゲームをプレイ\n");
 	fprintf_s(stdout, u8"1：ゲームの説明を読む\n");
 	fprintf_s(stdout, u8"2：ゲームのプレイ結果ランキングを見る\n\n");
+	fprintf_s(stdout, u8"入力：");
 
 	while (1) {
 		if (scanf_s("%lf", &d) == 1 and d >= 0 and d <= 2)

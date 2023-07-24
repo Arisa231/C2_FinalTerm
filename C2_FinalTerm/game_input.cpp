@@ -6,21 +6,24 @@ void getName(char name[10]) {
 	fprintf_s(stdout, u8"-------------------------------------------------------\n");
 	fprintf_s(stdout, u8"プレイヤーの名前を10文字以内で入力してください。\n");
 	for (;;) {
-
-		fgets(name, 10, stdin);
-		fprintf_s(stdout, u8"\n\n");
-		fprintf_s(stdout, u8"プレイヤー名は、「%s」でよろしいですか？\n", name);
-		fprintf_s(stdout, u8"よろしければ1を、変更するなら2を入力してください。\n");
-		while (1) {
-			if (scanf_s("%lf", &d) == 1 and (d == 1 or d == 2))
-				break;
-			fprintf_s(stdout, u8"1か2を入力してください。\n");
+		if (scanf_s("%9s", name, 10) == 1) {
 			scanf_s("%*[^\n]");
-		}
-		if (d == 1) {
-			fprintf_s(stdout, u8"プレイヤー名は、「%s」で登録しました。\n", name);
-			fprintf_s(stdout, u8"-------------------------------------------------------\n");
-			break;
+			fprintf_s(stdout, u8"プレイヤー名は、「%s」でよろしいですか？\n", name);
+			fprintf_s(stdout, u8"よろしければ1を、変更するなら2を入力してください。\n");
+			while (1) {
+				if (scanf_s("%lf", &d) == 1 and (d == 1 or d == 2))
+					break;
+				fprintf_s(stdout, u8"1か2を入力してください。\n");
+				scanf_s("%*[^\n]");
+			}
+			if (d == 1) {
+				fprintf_s(stdout, u8"プレイヤー名は、「%s」で登録しました。\n", name);
+				fprintf_s(stdout, u8"-------------------------------------------------------\n\n");
+				break;
+			}
+			if (d == 2) {
+				fprintf_s(stdout, u8"もう一度、プレイヤーの名前を10文字以内で入力してください。\n");
+			}
 		}
 	}
 }
