@@ -13,3 +13,7 @@ void getCurrentDirectory(char* currentDirectory);
 int makeQuestion(char char1[BUFFSIZE], char char2[BUFFSIZE], int size);
 // 問題の出力
 void printQuestion(char char1[BUFFSIZE], char char2[BUFFSIZE], int size, int answer);
+// 回答の入力
+void putAnswer(int size, int answer);
+// ゲームをプレイ
+void playGame();

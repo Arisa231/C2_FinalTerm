@@ -1,5 +1,4 @@
-#include "Setting.h"
-
+#include "setting.h"
 
 // ñ‚ëËÇÃçÏê¨
 int makeQuestion(char char1[BUFFSIZE], char char2[BUFFSIZE], int size) {
@@ -30,8 +29,6 @@ int makeQuestion(char char1[BUFFSIZE], char char2[BUFFSIZE], int size) {
 		random = rand() % size + 1;
 		answer = answer * 10 + random;
 	}
-
-	fprintf_s(stdout, "%d\n", answer);
 	return answer;
 }
 
@@ -43,16 +40,22 @@ void printQuestion(char char1[BUFFSIZE], char char2[BUFFSIZE], int size, int ans
 				fprintf_s(stdout, "   ");
 			}
 			else if (i == 0) {
-				fprintf_s(stdout, "%d ", j);
+				if(j<10)
+					fprintf_s(stdout, "%d  ", j);
+				else
+					fprintf_s(stdout, "%d ", j);
 			}
 			else if (j == 0) {
-				fprintf_s(stdout, "%d ", i);
+				if (i < 10)
+					fprintf_s(stdout, "%d  ", i);
+				else
+					fprintf_s(stdout, "%d ", i);
 			}
 			else if ((i * 10 + j) == answer) {
-				fprintf_s(stdout, "%s", char2);
+				fprintf_s(stdout, "%s ", char2);
 			}
 			else {
-				fprintf_s(stdout, "%s", char1);
+				fprintf_s(stdout, "%s ", char1);
 			}
 
 			if (j == size) {

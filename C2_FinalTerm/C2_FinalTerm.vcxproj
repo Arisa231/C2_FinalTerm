@@ -127,7 +127,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="answer.cpp" />
     <ClCompile Include="C2_FinalTerm.cpp" />
+    <ClCompile Include="game.cpp" />
     <ClCompile Include="question.cpp" />
     <ClCompile Include="output.cpp" />
     <ClCompile Include="setting.cpp" />
