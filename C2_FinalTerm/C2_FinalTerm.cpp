@@ -34,7 +34,11 @@ int main()
 		// ランキングを表示
 		else if (mode == 2) {
 			fprintf_s(stdout, u8"ランキング表示モードを選択しました。\n\n");
-			ranking();
+			playData* firstData = NULL;
+			playData* previous = NULL;
+			char fileName[BUFFSIZE] = "ranking.csv";
+			CSV2struct(fileName, firstData);
+			showRanking(firstData);
 		}
 	}
 

@@ -9,6 +9,13 @@ void result(char name[10], int correct, std::chrono::seconds playTime) {
 	fprintf_s(stdout, u8"正解数：%d, かかった時間：", correct);
 	std::cout << playTime.count() << u8"秒\n\n" << std::endl;
 
+	// ランキングのデータ更新
+	playData* firstData = NULL;
+	playData* previous = NULL;
+	char fileName[BUFFSIZE] = "ranking.csv";
+	CSV2struct(fileName, firstData);
+	updateRanking(name, correct, playTime, firstData);
+
 	fprintf_s(stdout, u8"好きなキーを押すと、モード選択に戻ります。\n");
 	system("pause");
 

@@ -1,10 +1,17 @@
 #include "setting.h"
 
-void showRanking() {
+void showRanking(playData* firstData) {
+	playData* previous = NULL;
+	playData* tmp = firstData;
 
+	for (int i = 0; i < 10; i++) {
+		fprintf_s(stdout, "%d  , %s  , %d  , %lf  \n", (i + 1), tmp->name, tmp->correct, tmp->playTime);
+		previous = tmp;
+		tmp = previous->next;
+	}
 }
 
-void updateRanking() {
+void updateRanking(char name[10], int correct, std::chrono::seconds playTime, playData* firstData) {
 
 }
 
@@ -18,6 +25,7 @@ void CSV2struct(const char* fileName, playData* firstData) {
 	n = 0;
 
 	// CSVƒf[ƒ^‚ğ\‘¢‘Ì‚ÉŠi”[
+	firstData = NULL;
 	playData* previousData = NULL;
 
 	errno_t error;
@@ -38,7 +46,8 @@ void CSV2struct(const char* fileName, playData* firstData) {
 
 			// –¼‘O‚ğŠi”[
 			p = strtok_s(NULL, ", ", &ctx);
-			tmp->name = p;
+			sprintf_s(s, "%s", p);
+			tmp->name = s;
 
 			// ³‰ğ”‚ğŠi”[
 			p = strtok_s(NULL, ", ", &ctx);
@@ -83,10 +92,12 @@ void struct2CSV(const char* fileName, playData * firstData) {
         sprintf_s(s, "‡ˆÊ,–¼‘O,³‰ğ‚µ‚½–â‘è”,‚©‚©‚Á‚½ŠÔ(s)\n");
         fputs(s, fp);
         for (i = 0; i < 10; i++) {
-            sprintf_s(s, "%d,%c,%d,%lf\n", (i + 1), tmp->name, tmp->correct, tmp->playTime);
+            sprintf_s(s, "%d,%s,%d,%lf\n", (i + 1), tmp->name, tmp->correct, tmp->playTime);
             fputs(s, fp);
-			previous = tmp;
-			tmp = previous->next;
+			if (i != 9) {
+				previous = tmp;
+				tmp = previous->next;
+			}
         }
         fclose(fp);
     }
