@@ -5,25 +5,9 @@ void playGame(char name[10], std::chrono::seconds playTime) {
 	question* firstQuestion = NULL;
 	question* previous = NULL;
 	int correct = 0;
-
-	// 問題作成
-	for (int i = 1; i < ROUND+1; i++) {
-		question* tmp = new question;
-		tmp->size = i * 4;
-		tmp->answer = makeQuestion(tmp->char1, tmp->char2, tmp->size);
-		if (i == 1) {
-			firstQuestion = tmp;
-		}
-		else {
-			previous->next = tmp;
-		}
-		previous = tmp;
-	}
+	bool again = false; // 問題が繰り返しかの判定
 
 	for (;;) {
-		question* tmp = new question;
-		tmp = firstQuestion;
-
 		// ゲームの開始
 		fprintf_s(stdout, u8"-------------------------------------------------------\n");
 		fprintf_s(stdout, u8"----------------------GAME-START-----------------------\n");
@@ -32,6 +16,23 @@ void playGame(char name[10], std::chrono::seconds playTime) {
 
 		// 5ラウンド
 		for (int i = 1; i < ROUND+1; i++) {
+			question* tmp = new question;
+
+			if (again == false) {
+				// 問題作成
+				tmp->size = i * 4;
+				tmp->answer = makeQuestion(tmp->char1, tmp->char2, tmp->size);
+				if (i == 1) {
+					firstQuestion = tmp;
+				}
+				else {
+					previous->next = tmp;
+				}
+				previous = tmp;
+			}
+			else
+				tmp = firstQuestion;
+
 			// 問題表示
 			fprintf_s(stdout, u8"-------------------------------------------------------\n");
 			fprintf_s(stdout, u8"-------------------------------------------------------\n\n");
@@ -62,7 +63,8 @@ void playGame(char name[10], std::chrono::seconds playTime) {
 			else {
 				auto endTime = std::chrono::high_resolution_clock::now();							// プレイ時間計測終了
 				playTime = std::chrono::duration_cast<std::chrono::seconds>(endTime - startTime);	// プレイ時間記録
-				fprintf_s(stdout, u8"----------------------GAME-FINISH----------------------\n");
+				fprintf_s(stdout, u8"-------------------------------------------------------\n");
+				fprintf_s(stdout, u8"--------------------GAME-FINISH------------------------\n");
 				fprintf_s(stdout, u8"-------------------------------------------------------\n");
 			}
 		}
@@ -81,9 +83,12 @@ void playGame(char name[10], std::chrono::seconds playTime) {
 			fprintf_s(stdout, u8"1か2を入力してください。\n");
 			scanf_s("%*[^\n]");
 		}
+		// もう一度プレイする場合
+		if (d == 1)
+			again = true;
 
-		if (d == 2) {
+		// もう一度プレイしない場合
+		if (d == 2) 
 			break;
-		}
 	}
 }

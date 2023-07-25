@@ -14,9 +14,6 @@ void result(char name[10], int correct, std::chrono::seconds playTime) {
 	char fileName1[BUFFSIZE] = "result.txt";
 	writeResult(fileName1, name, correct, playTime);
 
-	fprintf_s(stdout, u8"好きなキーを押すと、モード選択に戻ります。\n");
-	system("pause");
-
 	fprintf_s(stdout, u8"-------------------------------------------------------\n");
 	fprintf_s(stdout, u8"-------------------------------------------------------\n\n");
 }

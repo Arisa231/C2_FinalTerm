@@ -4,3 +4,5 @@ arisa,5,80
 arisa,8,11
 arisa,8,5
 r,0,12
+aaa,5,36
+ari,5,29
