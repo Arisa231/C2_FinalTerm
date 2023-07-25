@@ -9,6 +9,15 @@
 #include <chrono>
 
 #define BUFFSIZE 1024
+#define ROUND 5
+
+struct question {
+	char char1[BUFFSIZE];
+	char char2[BUFFSIZE];
+	int size;
+	int answer;
+	question* next;
+};
 
 // 使用した関数一覧
 void getCurrentDirectory(char* currentDirectory);
@@ -23,12 +32,12 @@ int getAnswer(int size, int answer);
 // 名前の入力
 void getName(char name[10]);
 // ゲームをプレイ
-int playGame(std::chrono::seconds playTime);
-// 結果の出力
+void playGame(char name[10], std::chrono::seconds playTime);
+// プレイ結果の出力
 void result(char name[10], int correct, std::chrono::seconds playTime);
-// 結果のファイル出力
-void writeResult(const char* fileName, char name[10], int correct, std::chrono::seconds playTime);
 // ゲームの説明を表示
 void description();
-// 結果のファイル読み込み
+// プレイ履歴を"result.txt"から読み込んで、コンソール画面に出力
 void readResult(const char* fileName);
+// プレイ結果を"result.txt"に書き込む
+void writeResult(const char* fileName, char name[10], int correct, std::chrono::seconds playTime);

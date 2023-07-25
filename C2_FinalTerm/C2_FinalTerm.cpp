@@ -21,8 +21,7 @@ int main()
 			fprintf_s(stdout, u8"好きなキーを押すと、ゲームスタートです。\n");
 			system("pause");
 
-			int correct = playGame(playTime); // ゲームのプレイ
-			result(name, correct, playTime);  // プレイ結果表示
+			playGame(name, playTime); // ゲームのプレイ
 		}
 
 		// ゲームの説明を表示
