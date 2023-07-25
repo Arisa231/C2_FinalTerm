@@ -8,6 +8,8 @@ void playGame(char name[10], std::chrono::seconds playTime) {
 	bool again = false; // –â‘è‚ªŒJ‚è•Ô‚µ‚©‚Ì”»’è
 
 	for (;;) {
+		correct = 0;
+
 		// ƒQ[ƒ€‚ÌŠJn
 		fprintf_s(stdout, u8"-------------------------------------------------------\n");
 		fprintf_s(stdout, u8"----------------------GAME-START-----------------------\n");

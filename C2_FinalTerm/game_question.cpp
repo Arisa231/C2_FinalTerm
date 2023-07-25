@@ -27,13 +27,14 @@ int makeQuestion(char char1[BUFFSIZE], char char2[BUFFSIZE], int size) {
 
 	for (int i = 0; i < 2; i++) {
 		random = rand() % size + 1;
-		answer = answer * 10 + random;
+		answer = answer * 100 + random;
 	}
 	return answer;
 }
 
 // 問題の出力
 void printQuestion(char char1[BUFFSIZE], char char2[BUFFSIZE], int size, int answer) {
+	// 格子状に問題を表示（座標ごとに表示する文字を選択している）
 	for (int i = 0; i <= size; i++) {
 		for (int j = 0; j <= size; j++) {
 			if (i == 0 && j == 0) {
@@ -51,7 +52,7 @@ void printQuestion(char char1[BUFFSIZE], char char2[BUFFSIZE], int size, int ans
 				else
 					fprintf_s(stdout, "%d ", i);
 			}
-			else if ((i * 10 + j) == answer) {
+			else if ((i * 100 + j) == answer) {
 				fprintf_s(stdout, "%s ", char2);
 			}
 			else {

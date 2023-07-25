@@ -36,6 +36,14 @@ int main()
 			char fileName[BUFFSIZE] = "result.txt";
 			readResult(fileName);
 		}
+
+		// ゲームの終了
+		else if (mode == 3) {
+			fprintf_s(stdout, u8"ゲームを終了します。\n");
+			fprintf_s(stdout, u8"-------------------------------------------------------\n");
+			fprintf_s(stdout, u8"-------------------------------------------------------\n");
+			break;
+		}
 	}
 
 	return 0;
