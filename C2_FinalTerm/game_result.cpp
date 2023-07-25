@@ -13,13 +13,6 @@ void result(char name[10], int correct, std::chrono::seconds playTime) {
 	char fileName1[BUFFSIZE] = "result.txt";
 	writeResult(fileName1, name, correct, playTime);
 
-	// ランキングのデータ更新
-	playData* firstData = NULL;
-	playData* previous = NULL;
-	char fileName2[BUFFSIZE] = "ranking.csv";
-	CSV2struct(fileName2, firstData);
-	updateRanking(fileName1, firstData);
-
 	fprintf_s(stdout, u8"好きなキーを押すと、モード選択に戻ります。\n");
 	system("pause");
 
@@ -30,10 +23,20 @@ void result(char name[10], int correct, std::chrono::seconds playTime) {
 void writeResult(const char* fileName, char name[10], int correct, std::chrono::seconds playTime) {
 	std::ofstream writingFile;
 	std::string fileName1 = fileName;
-	writingFile.open(fileName1, std::ios::out);
-	
-	writingFile << "最新のプレイ結果\n" << std::endl;
-	writingFile << "名前,正解した問題数,かかった時間(s)\n" << std::endl;
-	writingFile << name << "," << correct << "," << playTime.count() << "\n" << std::endl;
+	writingFile.open(fileName1, std::ios::app);
+
+	writingFile <<  name << "," << correct << "," << playTime.count() << "\n" << std::endl;
 	writingFile.close();
+}
+
+void readResult(const char* fileName) {
+	std::ifstream ifs(fileName);
+	std::string str;
+
+	if (ifs.fail()) {
+		std::cerr << "ファイルを開くことができませんでした。" << std::endl;
+	}
+	while (getline(ifs, str)) {
+		std::cout << str << std::endl;
+	}
 }

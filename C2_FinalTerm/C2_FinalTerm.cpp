@@ -31,14 +31,11 @@ int main()
 			description();
 		}
 
-		// ランキングを表示
+		// プレイ履歴を表示
 		else if (mode == 2) {
-			fprintf_s(stdout, u8"ランキング表示モードを選択しました。\n\n");
-			playData* firstData = NULL;
-			playData* previous = NULL;
-			char fileName[BUFFSIZE] = "ranking.csv";
-			CSV2struct(fileName, firstData);
-			showRanking(firstData);
+			fprintf_s(stdout, u8"プレイ履歴表示モードを選択しました。\n\n");
+			char fileName[BUFFSIZE] = "result.txt";
+			readResult(fileName);
 		}
 	}
 

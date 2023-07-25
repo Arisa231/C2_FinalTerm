@@ -10,16 +10,6 @@
 
 #define BUFFSIZE 1024
 
-struct playData 
-{
-	boolean isData = false;
-	int rank;
-	char* name;
-	int correct;
-	double playTime;
-	playData* next = NULL;
-};
-
 // 使用した関数一覧
 void getCurrentDirectory(char* currentDirectory);
 // ゲームタイトル＆モードの選択
@@ -38,13 +28,7 @@ int playGame(std::chrono::seconds playTime);
 void result(char name[10], int correct, std::chrono::seconds playTime);
 // 結果のファイル出力
 void writeResult(const char* fileName, char name[10], int correct, std::chrono::seconds playTime);
-// ゲームの説明
+// ゲームの説明を表示
 void description();
-// ゲームのプレイ結果ランキング表示
-void showRanking(playData* firstData);
-// ランキングを更新
-void updateRanking(const char* fileName, playData* firstData);
-// CSVファイルのデータ（ランキング）を読み込んで構造体に格納
-void CSV2struct(const char* fileName, playData* firstData);
-// 更新されたランキングをcsvファイルに出力
-void struct2CSV(const char* fileName, playData* firstData);
+// 結果のファイル読み込み
+void readResult(const char* fileName);

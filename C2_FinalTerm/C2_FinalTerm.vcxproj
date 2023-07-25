@@ -131,10 +131,9 @@
     <ClCompile Include="description.cpp" />
     <ClCompile Include="game_play.cpp" />
     <ClCompile Include="game_input.cpp" />
+    <ClCompile Include="game_result.cpp" />
     <ClCompile Include="intro.cpp" />
     <ClCompile Include="game_question.cpp" />
-    <ClCompile Include="game_result.cpp" />
-    <ClCompile Include="ranking.cpp" />
     <ClCompile Include="setting.cpp" />
   </ItemGroup>
   <ItemGroup>

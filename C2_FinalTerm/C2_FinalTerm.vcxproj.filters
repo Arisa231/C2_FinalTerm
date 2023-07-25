@@ -24,9 +24,6 @@
     <ClCompile Include="setting.cpp">
       <Filter>リソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="game_result.cpp">
-      <Filter>リソース ファイル</Filter>
-    </ClCompile>
     <ClCompile Include="game_play.cpp">
       <Filter>リソース ファイル</Filter>
     </ClCompile>
@@ -39,7 +36,7 @@
     <ClCompile Include="description.cpp">
       <Filter>リソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="ranking.cpp">
+    <ClCompile Include="game_result.cpp">
       <Filter>リソース ファイル</Filter>
     </ClCompile>
   </ItemGroup>
