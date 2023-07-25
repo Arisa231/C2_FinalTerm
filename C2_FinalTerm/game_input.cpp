@@ -65,7 +65,7 @@ int getAnswer(int size, int answer) {
 		fprintf_s(stdout, u8"1から%d列目までしかありません。もう一度入力してください。\n", size);
 		scanf_s("%*[^\n]");
 	}
-	playersAnswer = playersAnswer * 10 + d2;
+	playersAnswer = playersAnswer * 100 + d2;
 
 	// プレイヤーの入力した解答を返す
 	return playersAnswer;
