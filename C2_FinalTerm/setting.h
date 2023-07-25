@@ -36,12 +36,14 @@ void getName(char name[10]);
 int playGame(std::chrono::seconds playTime);
 // 結果の出力
 void result(char name[10], int correct, std::chrono::seconds playTime);
+// 結果のファイル出力
+void writeResult(const char* fileName, char name[10], int correct, std::chrono::seconds playTime);
 // ゲームの説明
 void description();
 // ゲームのプレイ結果ランキング表示
 void showRanking(playData* firstData);
 // ランキングを更新
-void updateRanking(char name[10], int correct, std::chrono::seconds playTime, playData* firstData);
+void updateRanking(const char* fileName, playData* firstData);
 // CSVファイルのデータ（ランキング）を読み込んで構造体に格納
 void CSV2struct(const char* fileName, playData* firstData);
 // 更新されたランキングをcsvファイルに出力
