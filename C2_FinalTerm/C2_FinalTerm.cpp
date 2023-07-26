@@ -11,7 +11,7 @@ int main()
 	while (1) {
 		// ゲームのイントロダクション（タイトル表示とモード選択）
 		int mode;
-		mode = introduction();
+		mode = chooseMode();
 
 		// ゲームプレイモード
 		if (mode == 0) {
@@ -27,7 +27,7 @@ int main()
 		// ゲームの説明を表示
 		else if (mode == 1) {
 			fprintf_s(stdout, u8"ゲーム説明モードを選択しました。\n\n");
-			description();
+			showDescription();
 		}
 
 		// プレイ履歴を表示

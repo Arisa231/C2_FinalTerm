@@ -22,7 +22,7 @@ struct question {
 // 使用した関数一覧
 void getCurrentDirectory(char* currentDirectory);
 // ゲームタイトル＆モードの選択
-int introduction();
+int chooseMode();
 // 問題の作成
 int makeQuestion(char char1[BUFFSIZE], char char2[BUFFSIZE], int size);
 // 問題の出力
@@ -34,9 +34,9 @@ void getName(char name[10]);
 // ゲームをプレイ
 void playGame(char name[10], std::chrono::seconds playTime);
 // プレイ結果の出力
-void result(char name[10], int correct, std::chrono::seconds playTime);
+void showGameResult(char name[10], int correct, std::chrono::seconds playTime);
 // ゲームの説明を表示
-void description();
+void showDescription();
 // プレイ履歴を"result.txt"から読み込んで、コンソール画面に出力
 void readResult(const char* fileName);
 // プレイ結果を"result.txt"に書き込む

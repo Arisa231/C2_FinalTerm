@@ -72,11 +72,11 @@ void playGame(char name[10], std::chrono::seconds playTime) {
 		}
 
 		// プレイ結果表示
-		result(name, correct, playTime);
+		showGameResult(name, correct, playTime);
 
-		// もう一度同じ問題でプレイするかの確認
+		// もう一度同じ問題をプレイするかの確認
 		double d;
-		fprintf_s(stdout, u8"もう一度、同じ問題でプレイしますか？\n");
+		fprintf_s(stdout, u8"もう一度、同じ問題をプレイしますか？\n");
 		fprintf_s(stdout, u8"プレイするなら1を、しないなら2を押してください。\n");
 		while (1) {
 			fprintf_s(stdout, u8"入力：");

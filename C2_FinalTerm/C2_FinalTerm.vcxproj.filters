@@ -27,7 +27,7 @@
     <ClCompile Include="game_play.cpp">
       <Filter>リソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="intro.cpp">
+    <ClCompile Include="mode.cpp">
       <Filter>リソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="game_input.cpp">

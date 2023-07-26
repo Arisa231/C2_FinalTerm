@@ -1,6 +1,6 @@
 #include "setting.h"
 
-int introduction() {
+int chooseMode() {
 	double d;
 	fprintf_s(stdout, u8"-------------------------------------------------------\n");
 	fprintf_s(stdout, u8"-----------------•¶šŠÔˆá‚¢’T‚µƒQ[ƒ€------------------\n");

@@ -1,7 +1,7 @@
 #include "setting.h"
 
 // ƒvƒŒƒCŒ‹‰Ê‚Ìo—Í
-void result(char name[10], int correct, std::chrono::seconds playTime) {
+void showGameResult(char name[10], int correct, std::chrono::seconds playTime) {
 	fprintf_s(stdout, u8"\n\n");
 	fprintf_s(stdout, u8"-------------------------------------------------------\n");
 	fprintf_s(stdout, u8"--------------------GAME-RESULT------------------------\n");

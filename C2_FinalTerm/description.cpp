@@ -1,6 +1,6 @@
 #include "setting.h"
 
-void description() {
+void showDescription() {
     fprintf_s(stdout, u8"-------------------------------------------------------\n");
     fprintf_s(stdout, u8"-------------------------------------------------------\n\n");
 
