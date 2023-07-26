@@ -19,7 +19,7 @@ struct question {
 	question* next;
 };
 
-// 使用した関数一覧
+// 使用した関数一覧　//
 void getCurrentDirectory(char* currentDirectory);
 // ゲームタイトル＆モードの選択
 int chooseMode();

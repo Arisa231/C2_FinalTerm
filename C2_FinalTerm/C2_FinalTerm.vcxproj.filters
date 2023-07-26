@@ -21,9 +21,6 @@
     <ClCompile Include="game_question.cpp">
       <Filter>リソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="setting.cpp">
-      <Filter>リソース ファイル</Filter>
-    </ClCompile>
     <ClCompile Include="game_play.cpp">
       <Filter>リソース ファイル</Filter>
     </ClCompile>

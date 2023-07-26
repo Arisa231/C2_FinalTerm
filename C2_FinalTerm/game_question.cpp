@@ -1,5 +1,9 @@
 #include "setting.h"
 
+void getCurrentDirectory(char* currentDirectory) {
+	GetCurrentDirectory(BUFFSIZE, currentDirectory);
+}
+
 // –â‘è‚Ìì¬
 int makeQuestion(char char1[BUFFSIZE], char char2[BUFFSIZE], int size) {
 	// –â‘è‚Ég—p‚·‚é•¶š‚ğ‘I‘ğ

@@ -8,3 +8,7 @@ aaa,5,36
 ari,5,29
 haru,5,66
 aaa,5,143
+sakura,5,31
+sakura,1,6
+sakura,3,7
+aaa,0,6

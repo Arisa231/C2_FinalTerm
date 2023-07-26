@@ -5,7 +5,7 @@ void playGame(char name[10], std::chrono::seconds playTime) {
 	question* firstQuestion = NULL;
 	question* previous = NULL;
 	int correct = 0;
-	bool again = false; // 問題が繰り返しかの判定
+	bool replay = false; // 同じ問題をプレイするかの判定
 
 	for (;;) {
 		correct = 0;
@@ -20,7 +20,7 @@ void playGame(char name[10], std::chrono::seconds playTime) {
 		for (int i = 1; i < ROUND+1; i++) {
 			question* tmp = new question;
 
-			if (again == false) {
+			if (replay == false) {
 				// 問題作成
 				tmp->size = i * 4;
 				tmp->answer = makeQuestion(tmp->char1, tmp->char2, tmp->size);
@@ -87,7 +87,7 @@ void playGame(char name[10], std::chrono::seconds playTime) {
 		}
 		// もう一度プレイする場合
 		if (d == 1)
-			again = true;
+			replay = true;
 
 		// もう一度プレイしない場合
 		if (d == 2) 
