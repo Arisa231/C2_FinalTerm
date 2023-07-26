@@ -1,14 +1,5 @@
 プレイ履歴(名前,正解した問題数,かかった時間(s))
 aaa,0,30
 arisa,5,80
-arisa,8,11
-arisa,8,5
-r,0,12
-aaa,5,36
-ari,5,29
-haru,5,66
 aaa,5,143
 sakura,5,31
-sakura,1,6
-sakura,3,7
-aaa,0,6
